@@ -10,6 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Bulbasaur;
+import model.Charizard;
+import model.Dragonite;
+import model.Mew;
+import model.Pikachu;
+
+//import service.PersonalityCalculator;
+
 @WebServlet(urlPatterns = { "/pokemon" })
 public class PokemonController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -32,68 +40,77 @@ public class PokemonController extends HttpServlet {
 		String value3 = request.getParameter("card3"); 
 		String value4 = request.getParameter("card4"); 
 		String value5 = request.getParameter("card5"); 
-
+		
+		
 		String msg = "";
 
 		if (value1 != null) {
 			
 			// Create the object for Bulbasaur class and use getters to retrieve the values	
-		/*	  
-			msg = "<center>" + //getter + "  #" + //getter;
-			request.setAttribute("message2",//getter);
-			request.setAttribute("character2", //getter);
-			request.setAttribute("type2",//getter;
-			request.setAttribute("evolution2", //getter);
-			request.setAttribute("baseExp2", //getter);*/
+			//Bulbasaur bulbasaur=new Bulbasaur(Bulbasaur",001,"Bulbasaur is a Grass/poison-type pokémon introduced in Generation I.It evolves into Ivysaur starting at level 16. It is one of the three Starter pokémon in the Kanto region.",
+					//"pOISON","IVYSAUR","64");
+			Bulbasaur bulbasaur=new Bulbasaur("Bulbasaur",001,"Bulbasaur is a Grass/poison-type pokémon introduced in Generation I.It evolves into Ivysaur starting at level 16. It is one of the three Starter pokémon in the Kanto region.","POISON","IVYSAUR","64");
+			msg = "<center>" + bulbasaur.getpokemonName()+ "  #" + bulbasaur.getpokemonNumber();
+			request.setAttribute("message2",bulbasaur.getpokemonNumber());
+			request.setAttribute("character1", bulbasaur.getCharacteristics());
+			request.setAttribute("type1",bulbasaur.getType());
+			request.setAttribute("evolution1",bulbasaur.getEvolution());
+			request.setAttribute("baseExp1", bulbasaur.getBaseExp());
+				  
+			
 		}
 
 		if (value2 != null) {
 			// Create the object for Charizard class and use getters to retrieve the values	
-			
-			/*	  
-			msg = "<center>" + //getter + "  #" + //getter;
-			request.setAttribute("message2",//getter);
-			request.setAttribute("character2", //getter);
-			request.setAttribute("type2",//getter;
-			request.setAttribute("evolution2", //getter);
-			request.setAttribute("baseExp2", //getter);*/
+			Charizard charizard=new Charizard("Charizard",006,"\"Charizard is fit and strong and has the ability to soar up to ridiculous heights. With a single breath of fire, it can burn down forests and melt gigantic glaciers.",
+					"FIRE","CHARMELEON","240");
+			msg = "<center>" + charizard.getpokemonName() + "  #" +  charizard.getpokemonNumber();
+			request.setAttribute("message2", charizard.getpokemonNumber());
+			request.setAttribute("character2",charizard.getCharacteristics());
+			request.setAttribute("type2",charizard.getType());
+			request.setAttribute("evolution2", charizard.getEvolution());
+			request.setAttribute("baseExp2",charizard.getBaseExp());	
 		}
 
 		if (value3 != null) {
 
 			// Create the object for Dragonite class and use getters to retrieve the values	
-
-			/*	  
-			msg = "<center>" + //getter + "  #" + //getter;
-			request.setAttribute("message2",//getter);
-			request.setAttribute("character2", //getter);
-			request.setAttribute("type2",//getter;
-			request.setAttribute("evolution2", //getter);
-			request.setAttribute("baseExp2", //getter);*/
+			Dragonite dragonite=new Dragonite(" Dragonite",149,"Dragonite is capable of flying faster than the speed of sound.It is a kindhearted pokémon with human-like intelligence. It shows signs of altruism.", "DRAGON","DRATINI","270");
+			msg = "<center>" + dragonite.getpokemonName() + "  #" +  dragonite.getpokemonNumber();
+			request.setAttribute("message3",dragonite.getpokemonNumber());
+			request.setAttribute("character3", dragonite.getCharacteristics());
+			request.setAttribute("type3",dragonite.getType());
+			request.setAttribute("evolution3",dragonite.getEvolution());
+			request.setAttribute("baseExp3", dragonite.getBaseExp());  
+			
 		}
 		if (value4 != null) {
 
 			// Create the object for Mew class and use getters to retrieve the values	
-			/*	  
-			msg = "<center>" + //getter + "  #" + //getter;
-			request.setAttribute("message2",//getter);
-			request.setAttribute("character2", //getter);
-			request.setAttribute("type2",//getter;
-			request.setAttribute("evolution2", //getter);
-			request.setAttribute("baseExp2", //getter);*/
+			Mew mew=new Mew("Mew",151,"Mew is a psychic-type Mythical pokémon introduced in Generation I. Mew is notable for its unique ability to learn every Technical Machine, Technical Record & Hidden Machine.",
+					"pSYCHIC","NONE","64");
+				  
+			msg = "<center>" + mew.getpokemonName() + "  #" + mew.getpokemonNumber();
+			request.setAttribute("message4",mew.getpokemonNumber());
+			request.setAttribute("character4",mew.getCharacteristics());
+			request.setAttribute("type4",mew.getType());
+			request.setAttribute("evolution4", mew.getEvolution());
+			request.setAttribute("baseExp4", mew.getBaseExp());
 		}
 
 		if (value5 != null) {
 
 			// Create the object for Pikachu class and use getters to retrieve the values	
 /*getter*/
-			/*	  
-			msg = "<center>" + //getter + "  #" + //getter;
-			request.setAttribute("message2",//getter);
-			request.setAttribute("character2", //getter);
-			request.setAttribute("type2",//getter;
-			request.setAttribute("evolution2", //getter);
-			request.setAttribute("baseExp2", //getter);*/
+			Pikachu pikachu=new Pikachu("pikachu",25,"pikachu is an Electric-type pokémon, which was introduced in Generation I. Over the years, pikachu has become so popular that it serves as the pokémon franchise mascot.",
+					"ELECTRIC","RAICHU","112");
+				  
+			msg = "<center>" + pikachu.getpokemonName() + "  #" +  pikachu.getpokemonNumber();
+			request.setAttribute("message5",pikachu.getpokemonNumber());
+			request.setAttribute("character5",pikachu.getCharacteristics());
+			request.setAttribute("type5",pikachu.getType());
+			request.setAttribute("evolution5",pikachu.getEvolution());
+			request.setAttribute("baseExp5", pikachu.getBaseExp());
 
 		}
 
